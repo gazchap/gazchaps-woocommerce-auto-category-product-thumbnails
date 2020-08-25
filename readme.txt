@@ -5,7 +5,7 @@ Requires at least: 4.5.0
 Requires PHP: 5.6
 Tested up to: 5.5
 WC requires at least: 3.0.0
-WC tested up to: 4.3.3
+WC tested up to: 4.4.1
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -33,6 +33,10 @@ There are a number of options, these can be found in WooCommerce -> Settings -> 
 - Exclude Thumbnail IDs accepts a comma-separated list of attachment IDs from the WordPress Media Library. The plugin will never use any thumbnail with one of these IDs for a category.
 
 == Changelog ==
+= 1.3.1 (25/08/2020 =
+
+* Fixed an undefined variable notice error
+
 = 1.3 (14/08/2020) =
 
 * Added options to have the plugin use WordPress transients to improve performance on subsequent page loads

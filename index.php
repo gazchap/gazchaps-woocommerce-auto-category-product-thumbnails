@@ -2,13 +2,13 @@
 /**
  * Plugin Name: GazChap's WooCommerce Auto Category Product Thumbnails
  * Plugin URI: https://www.gazchap.com/posts/woocommerce-category-product-thumbnails/
- * Version: 1.3
+ * Version: 1.3.1
  * Author: Gareth 'GazChap' Griffiths
  * Author URI: https://www.gazchap.com/
  * Description: Automatically use a product thumbnail as a category thumbnail if no category thumbnail is set
  * Tested up to: 5.5
  * WC requires at least: 3.0.0
- * WC tested up to: 4.3.3
+ * WC tested up to: 4.4.1
  * Text Domain: gazchaps-woocommerce-auto-category-product-thumbnails
  * Domain Path: /lang
  * License: GNU General Public License v2.0
@@ -172,7 +172,7 @@ class WC_Category_Product_Thumbnails {
 			$product_thumbnail_id = get_post_thumbnail_id( $thumbnail_product_id );
 		}
 
-		if ( !empty( $thumbnail_product_id ) && !in_array( $product_thumbnail_id, $exclude_thumbnail_ids ) ) {
+		if ( !empty( $thumbnail_product_id ) && ( empty( $product_thumbnail_id ) || !in_array( $product_thumbnail_id, $exclude_thumbnail_ids ) ) ) {
 			echo get_the_post_thumbnail( $thumbnail_product_id, $this->image_size );
 		} else {
 			// show the default placeholder category image if there's no products inside this one
