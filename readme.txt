@@ -9,11 +9,13 @@ WC tested up to: 6.1.1
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
+Pick WooCommerce category thumbnails automatically from products contained within those categories.
+
+== Description ==
 By default, WooCommerce will only show thumbnails for categories if the category has a thumbnail set.
 
 This plugin changes this behaviour so that WooCommerce will hunt for a product thumbnail in the category being displayed, and use that instead.
 
-== Description ==
 Upon activation, the plugin will configure itself with the basic settings. Any categories that you have on your WooCommerce store that do not have a thumbnail set will then start displaying any available product thumbnails inside the category.
 
 There are a number of options, these can be found in WooCommerce -> Settings -> Products -> Auto Category Thumbnails.
