@@ -3,9 +3,9 @@ Contributors: gazchap
 Tags: woocommerce,ecommerce,images,thumbnails
 Requires at least: 4.5.0
 Requires PHP: 5.6
-Tested up to: 5.6
+Tested up to: 5.9
 WC requires at least: 3.0.0
-WC tested up to: 4.9.0
+WC tested up to: 6.1.1
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -33,7 +33,11 @@ There are a number of options, these can be found in WooCommerce -> Settings -> 
 - Exclude Thumbnail IDs accepts a comma-separated list of attachment IDs from the WordPress Media Library. The plugin will never use any thumbnail with one of these IDs for a category.
 
 == Changelog ==
-= 1.3.1 (25/08/2020 =
+= 1.4 (25/01/2022) =
+
+* Added checks into the activation hook so that existing options are not reset on plugin activation
+
+= 1.3.1 (25/08/2020) =
 
 * Fixed an undefined variable notice error
 

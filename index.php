@@ -2,13 +2,13 @@
 /**
  * Plugin Name: GazChap's WooCommerce Auto Category Product Thumbnails
  * Plugin URI: https://www.gazchap.com/posts/woocommerce-category-product-thumbnails/
- * Version: 1.3.1
+ * Version: 1.4
  * Author: Gareth 'GazChap' Griffiths
  * Author URI: https://www.gazchap.com/
  * Description: Automatically use a product thumbnail as a category thumbnail if no category thumbnail is set
- * Tested up to: 5.6
+ * Tested up to: 5.9
  * WC requires at least: 3.0.0
- * WC tested up to: 4.9.0
+ * WC tested up to: 6.1.1
  * Text Domain: gazchaps-woocommerce-auto-category-product-thumbnails
  * Domain Path: /lang
  * License: GNU General Public License v2.0
@@ -38,11 +38,18 @@ class WC_Category_Product_Thumbnails {
 	}
 
 	public function activation() {
-		update_option( 'gazchaps-woocommerce-auto-category-product-thumbnails_shuffle', 'yes' );
-		update_option( 'gazchaps-woocommerce-auto-category-product-thumbnails_recurse', 'yes' );
-		update_option( 'gazchaps-woocommerce-auto-category-product-thumbnails_category-size', 'shop_thumbnail' );
-		update_option( 'gazchaps-woocommerce-auto-category-product-thumbnails_use-transients', 'yes' );
-		update_option( 'gazchaps-woocommerce-auto-category-product-thumbnails_transient-expiry', 86400 );
+		$default_options = array(
+			'gazchaps-woocommerce-auto-category-product-thumbnails_shuffle' => 'yes',
+			'gazchaps-woocommerce-auto-category-product-thumbnails_recurse' => 'yes',
+			'gazchaps-woocommerce-auto-category-product-thumbnails_category-size' => 'shop_thumbnail',
+			'gazchaps-woocommerce-auto-category-product-thumbnails_use-transients' => 'yes',
+			'gazchaps-woocommerce-auto-category-product-thumbnails_transient-expiry' => 86400,
+		);
+		foreach( $default_options as $o => $v ) {
+			if ( !get_option( $o ) ) {
+				update_option( $o, $v );
+			}
+		}
 	}
 
 	public function add_settings_link( $links ) {
@@ -367,7 +374,7 @@ class WC_Category_Product_Thumbnails {
 				return $exclude_ids;
 			}
 		}
-		return [];
+		return array();
 	}
 
 }
