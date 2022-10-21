@@ -2,7 +2,7 @@
 /**
  * Plugin Name: GazChap's WooCommerce Auto Category Product Thumbnails
  * Plugin URI: https://www.gazchap.com/posts/woocommerce-category-product-thumbnails/
- * Version: 1.5
+ * Version: 1.4
  * Author: Gareth 'GazChap' Griffiths
  * Author URI: https://www.gazchap.com/
  * Description: Automatically use a product thumbnail as a category thumbnail if no category thumbnail is set
